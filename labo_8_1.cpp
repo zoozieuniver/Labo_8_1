@@ -1,6 +1,7 @@
-#define _crt_secure_no_warnings
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <vector>
+#include <math.h>
 
 int main() {
 
@@ -12,16 +13,19 @@ int main() {
 	printf("Enter value of x: ");
 	scanf("%f", &x);
 
-	printf("How many numbers massive needs? Enter amount: ");
-	scanf("%i", quantity);
+	printf("How many numbers massive needs? Enter amount : ");
+	scanf("%i", &quantity);
 
-	for (i = 0, i <= quantity - 1; i++) {
-		printf("enter value of massive number %i", i);
+	for (i = 0; i <= quantity - 1; i++) {
+		printf("enter value of a[%i] =", i);
 		scanf("%f", &enter_value);
 
 		a.push_back(enter_value);
 		S *= a[i];
 	}
+
+	float y = log(x) + sqrt(S);
+	printf("y = %f", y);
 
 	return 0;
 }
